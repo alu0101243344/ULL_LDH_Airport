@@ -31,6 +31,7 @@ public class passengerstest {
 
     }
     //Test no correcto
+    /**
     @DisplayName("Passengers Country Code")
     @Test
     public void passengerscountrycode(){
@@ -38,6 +39,7 @@ public class passengerstest {
         assertAll("Verifica Country Code de los pasajeros", () -> assertEquals("ES", kevin.getCountryCode()), () -> assertEquals("GER", andres.getCountryCode()));
 
     }
+    **/
 
     //Test correcto
     @DisplayName("Verify all data")
@@ -49,6 +51,7 @@ public class passengerstest {
     }
 
     //Test no correcto
+    /**
     @DisplayName("Verify all data 2")
     @Test
     public void alldata2(){
@@ -56,6 +59,7 @@ public class passengerstest {
         assertAll("Verifica todos los datos del pasajero andres", () -> assertEquals("AA012", andres.getIdentifier()), () -> assertEquals("Dagoberto", andres.getName()), () -> assertEquals("ES", andres.getCountryCode()));
 
     }
+    **/
 
     //Test correcto
     @DisplayName("To String")

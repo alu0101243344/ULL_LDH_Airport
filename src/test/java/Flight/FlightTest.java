@@ -28,12 +28,14 @@ public class FlightTest {
     }
 
     //Test no correcto
+    /**
     @DisplayName("Incorrect flight number")
     @Test
     public void NoFlightNumber(){
 
         assertAll("Verifica numeros de vuelo",() -> assertEquals("AA001",vuelo1.getFlightNumber()), () -> assertEquals("AA003",vuelo2.getFlightNumber()));
     }
+    **/
 
     //Test correcto
     @DisplayName("Number of seats")
@@ -44,11 +46,12 @@ public class FlightTest {
     }
 
     //Test no correcto
+    /**
     @DisplayName("Incorrect number of seats")
     @Test
     public void NoNumberSeats(){
         assertEquals(5, vuelo2.getSeats());
         assertNotEquals(0,vuelo2.getSeats());
     }
-
+    **/
 }

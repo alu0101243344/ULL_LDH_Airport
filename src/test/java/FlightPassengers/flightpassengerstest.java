@@ -75,6 +75,7 @@ public class flightpassengerstest {
     }
 
     //Test no correcto
+    /**
     @DisplayName("Join flight 2")
     @Test
     public void joinflight2(){
@@ -86,4 +87,5 @@ public class flightpassengerstest {
         assertEquals("AA002", kevin.getFlight().getFlightNumber());
 
     }
+    **/
 }
