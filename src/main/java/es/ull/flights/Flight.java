@@ -1,23 +1,23 @@
-/*
- * ========================================================================
+/**
+ * <p>
+ *  This class is used to view the necessary elements of a flight.
+ *  </p>
  *
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Get the flight number of a flight </li>
+ *  <li> Get the passenger number of a passenger </li>
+ *  <li> Get the number of seats a flight </li>
+ *  <li> Add passengers to a flight </li>
+ *  <li> Remove passengers of a flight </li>
+ *  </ul>
+ *  </p>
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * ========================================================================
+ *  @since 20/12/22
+ *  @version 1.0
  */
+
 package es.ull.flights;
 
 import java.util.HashSet;
@@ -36,6 +36,12 @@ public class Flight {
     private static String flightNumberRegex = "^[A-Z]{2}\\d{3,4}$";
     private static Pattern pattern = Pattern.compile(flightNumberRegex);
 
+    /**
+     *
+     * @param flightNumber is a string variable representing the flight number of the flight.
+     * @param seats is a integer variable representing the number of seats of the flight.
+     */
+
     public Flight(String flightNumber, int seats) {
         Matcher matcher = pattern.matcher(flightNumber);
         if (!matcher.matches()) {
@@ -45,16 +51,33 @@ public class Flight {
         this.seats = seats;
     }
 
+    /**
+     *
+     * @return String - Flight number of the flight
+     */
     public String getFlightNumber() {
         return flightNumber;
     }
 
+    /**
+     *
+     * @return Int - Number of the passenger
+     */
     public int getNumberOfPassengers() {
         return passengers.size();
     }
 
+    /**
+     *
+     * @return Int - Number of seats
+     */
     public int getSeats() {return seats; }
 
+    /**
+     *
+     * @param passenger is a variable representing a passenger of the flight
+     * @return Boolean - True if there are enough seats to add passenger - False otherwise
+     */
     public boolean addPassenger(Passenger passenger) {
         if (getNumberOfPassengers() >= seats) {
             throw new RuntimeException("Not enough seats for flight " + getFlightNumber());
@@ -63,6 +86,11 @@ public class Flight {
         return passengers.add(passenger);
     }
 
+    /**
+     *
+     * @param passenger is a variable representing a passenger of the flight
+     * @return Boolean - True if the passenger is set on a flight - False otherwise
+     */
     public boolean removePassenger(Passenger passenger) {
         passenger.setFlight(null);
         return passengers.remove(passenger);

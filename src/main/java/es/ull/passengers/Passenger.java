@@ -1,23 +1,24 @@
-/*
- * ========================================================================
+/**
+ * <p>
+ *  This class is used to view the necessary data of the passengers.
+ *  </p>
  *
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Get the ID of the passengers </li>
+ *  <li> Get the name of the passengers </li>
+ *  <li> Get the country code of the passengers </li>
+ *  <li> Get the flight of the passenger </li>
+ *  <li> Let the passenger join a flight </li>
+ *  <li> Let the passenger set a flight </li>
+ *  </ul>
+ *  </p>
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * ========================================================================
+ *  @since 20/12/22
+ *  @version 1.0
  */
+
 package es.ull.passengers;
 
 import java.util.Arrays;
@@ -32,6 +33,12 @@ public class Passenger {
     private String countryCode;
     private Flight flight;
 
+    /**
+     *
+     * @param identifier is a String variable representing the ID of the passenger
+     * @param name is a String variable representing the name of the passenger
+     * @param countryCode is a String variable representing the country code of the passenger
+     */
     public Passenger(String identifier, String name, String countryCode) {
         if (!Arrays.asList(Locale.getISOCountries()).contains(countryCode)) {
             throw new RuntimeException("Invalid country code");
@@ -42,22 +49,42 @@ public class Passenger {
         this.countryCode = countryCode;
     }
 
+    /**
+     *
+     * @return String - ID of the passenger
+     */
     public String getIdentifier() {
         return identifier;
     }
 
+    /**
+     *
+     * @return String - Name of the passenger
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @return String - Country code of the passenger
+     */
     public String getCountryCode() {
         return countryCode;
     }
 
+    /**
+     *
+     * @return Flight
+     */
     public Flight getFlight() {
         return flight;
     }
 
+    /**
+     *
+     * @param flight is a variable representing the flight of the passenger
+     */
     public void joinFlight(Flight flight) {
         Flight previousFlight = this.flight;
         if (null != previousFlight) {
@@ -73,10 +100,18 @@ public class Passenger {
         }
     }
 
+    /**
+     *
+     * @param flight is a variable representing the flight of the passenger
+     */
     public void setFlight(Flight flight) {
         this.flight = flight;
     }
 
+    /**
+     *
+     * @return String - A string to verify the data of the passenger
+     */
     @Override
     public String toString() {
         return "Passenger " + getName() + " with identifier: " + getIdentifier() + " from " + getCountryCode();

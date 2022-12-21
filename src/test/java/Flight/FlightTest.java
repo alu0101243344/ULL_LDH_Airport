@@ -1,3 +1,20 @@
+/**
+ * <p>
+ *  This class is used to test the different elements of a flight.
+ *  </p>
+ *
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Test and verify the flight and passengers numbers </li>
+ *  <li> Test and verify the number of seats of a flight </li>
+ *  </ul>
+ *  </p>
+ *
+ *  @since 20/12/22
+ *  @version 1.0
+ */
+
 package Flight;
 
 import org.junit.jupiter.api.*;
@@ -27,7 +44,7 @@ public class FlightTest {
 
     }
 
-    //Test no correcto
+    //Test no correcto (fallido)
     /**
     @DisplayName("Incorrect flight number")
     @Test
@@ -45,7 +62,7 @@ public class FlightTest {
         assertNotEquals(0,vuelo1.getSeats());
     }
 
-    //Test no correcto
+    //Test no correcto (fallido)
     /**
     @DisplayName("Incorrect number of seats")
     @Test

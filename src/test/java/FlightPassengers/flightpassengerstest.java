@@ -1,3 +1,22 @@
+/**
+ * <p>
+ *  This class is used to test the different elements and actions of a flight.
+ *  </p>
+ *
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Test and verify the add passengers action </li>
+ *  <li> Test and verify the add passengers without seats action </li>
+ *  <li> Test and verify the remove passengers action </li>
+ *  <li> Test and verify the join flight action </li>
+ *  </ul>
+ *  </p>
+ *
+ *  @since 20/12/22
+ *  @version 1.0
+ */
+
 package FlightPassengers;
 
 import org.junit.jupiter.api.*;
@@ -74,7 +93,7 @@ public class flightpassengerstest {
 
     }
 
-    //Test no correcto
+    //Test no correcto (Fallido)
     /**
     @DisplayName("Join flight 2")
     @Test

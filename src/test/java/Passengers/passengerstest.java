@@ -1,3 +1,22 @@
+/**
+ * <p>
+ *  This class is used to test the different data of the passengers.
+ *  </p>
+ *
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Test and verify the passengers ID </li>
+ *  <li> Test and verify the passengers country code </li>
+ *  <li> Test and verify the passengers name </li>
+ *  <li> Test and verify all the passengers data </li>
+ *  </ul>
+ *  </p>
+ *
+ *  @since 20/12/22
+ *  @version 1.0
+ */
+
 package Passengers;
 
 import org.junit.jupiter.api.*;
@@ -30,7 +49,8 @@ public class passengerstest {
         assertAll("Verifica ID de los pasajeros",() -> assertEquals("AA011",kevin.getIdentifier()), () -> assertEquals("AA012",andres.getIdentifier()));
 
     }
-    //Test no correcto
+
+    //Test no correcto (fallido)
     /**
     @DisplayName("Passengers Country Code")
     @Test
@@ -50,7 +70,7 @@ public class passengerstest {
 
     }
 
-    //Test no correcto
+    //Test no correcto (fallido)
     /**
     @DisplayName("Verify all data 2")
     @Test
@@ -70,7 +90,9 @@ public class passengerstest {
 
     }
 
-    //Test no correcto
+
+    //Test no correcto (fallido)
+    /**
     @DisplayName("To string 2")
     @Test
     public void tostring2(){
@@ -78,5 +100,6 @@ public class passengerstest {
         assertAll("Verifica todos los datos del pasajero kevin", () -> assertEquals("AA011", kevin.getIdentifier()), () -> assertEquals("kevin", kevin.getName()), () -> assertEquals("ES", kevin.getCountryCode()), () -> assertEquals("Passenger Dagoberto with identifier: AA013 from GER", kevin.toString()));
 
     }
+    */
 
 }
